@@ -1,0 +1,6 @@
+go 1.19
+
+use (
+	./packages/helpers
+	./Part-1/4-testing
+)
