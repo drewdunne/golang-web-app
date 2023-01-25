@@ -11,6 +11,8 @@ var tests = []struct {
 } {
 	{"valid-data", 100.0, 10.0, 10.0, false},
 	{"invalid-data", 100.0, 0.0, 0.0, true},
+	{"expect-5", 50.0, 10.0, 5.0, false},
+	{"expect-fraction", -1, -777.0, 0.0012870013, false},
 }
 
 
@@ -32,17 +34,19 @@ func TestDivision(t *testing.T) {
 	}
 }
 
-// BELOW TESTS ARE UNECESSARY BECAUSE OF THE TEST ABOVE
-func TestDivide(t *testing.T) {
-	_, err := divide(10.0, 1.0)
-	if err != nil {
-		t.Error("Got an error when we should not have")
-	}
-}
 
-func TestBadDivide(t *testing.T) {
-	_, err := divide(10.0, 0.0)
-	if err == nil {
-		t.Error("Did not get an error when we should have")
-	}
-}
+
+// // BELOW TESTS ARE UNECESSARY BECAUSE OF THE TEST ABOVE
+// func TestDivide(t *testing.T) {
+// 	_, err := divide(10.0, 1.0)
+// 	if err != nil {
+// 		t.Error("Got an error when we should not have")
+// 	}
+// }
+
+// func TestBadDivide(t *testing.T) {
+// 	_, err := divide(10.0, 0.0)
+// 	if err == nil {
+// 		t.Error("Did not get an error when we should have")
+// 	}
+// }
